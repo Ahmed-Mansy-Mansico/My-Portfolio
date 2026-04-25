@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Mansy | Senior ERPNext Developer & Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            padding: 5rem 2rem;
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero .location {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--bg-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '▹';
+            color: var(--primary-color);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-color);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-company {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .timeline-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .timeline-description li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .project-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tech {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-weight: 600;
+        }
+
+        .project-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Community Section */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .community-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .community-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .community-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .community-card p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .community-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .community-stat {
+            text-align: center;
+        }
+
+        .community-stat-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .community-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Education Section */
+        .education-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+        }
+
+        .education-school {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .education-year {
+            color: var(--text-light);
+        }
+
+        .education-activities {
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--bg-light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-card a {
+            color: var(--text-light);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Ahmed Mansy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="profile.jpeg" alt="Ahmed Mansy" class="profile-img">
+            <h1>Ahmed Mansy</h1>
+            <p class="tagline">Senior ERPNext Developer & Consultant</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt | Born: November 4, 2000</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">4+</span>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1,540+</span>
+                <p class="stat-label">GitHub Contributions</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">118+</span>
+                <p class="stat-label">YouTube Videos</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.16K+</span>
+                <p class="stat-label">YouTube Subscribers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Senior ERP and Backend Developer with extensive experience delivering high-performance ERPNext and Django-based systems for government, enterprise, and education sectors. I specialize in system architecture, backend engineering, data migration, performance optimization, and building complex end-to-end ERP modules.
+                </p>
+                <p>
+                    I have led mission-critical systems, engineered full student information systems, built mobile API backends, designed advanced tracking and operations platforms, and optimized large-scale deployments with millions of records.
+                </p>
+                <p>
+                    I'm passionate about clean architecture, scalability, DevOps, and solving real business problems through powerful, reliable ERP solutions. I believe in sharing knowledge and contributing to the open-source community.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="cartoon_profile_pic.png" alt="About Ahmed Mansy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <ul class="skill-list">
+                    <li>Python (Expert)</li>
+                    <li>JavaScript (Advanced)</li>
+                    <li>SQL (Expert)</li>
+                    <li>HTML/CSS (Advanced)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> ERP & Frameworks</h3>
+                <ul class="skill-list">
+                    <li>ERPNext (Expert)</li>
+                    <li>Frappe Framework (Expert)</li>
+                    <li>Django (Advanced)</li>
+                    <li>Django Cookiecutter</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> Databases</h3>
+                <ul class="skill-list">
+                    <li>MariaDB</li>
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>Redis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
+                <ul class="skill-list">
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>Nginx</li>
+                    <li>AWS, Heroku, DigitalOcean</li>
+                    <li>Load Balancing</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-plug"></i> Frontend Technologies</h3>
+                <ul class="skill-list">
+                    <li>React.js</li>
+                    <li>Vue.js</li>
+                    <li>WebSockets / Socket.IO</li>
+                    <li>RESTful APIs</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-tools"></i> Tools & Practices</h3>
+                <ul class="skill-list">
+                    <li>Git, GitHub, GitLab</li>
+                    <li>Query Optimization</li>
+                    <li>Database Indexing</li>
+                    <li>SOLID Principles</li>
+                    <li>Design Patterns</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Senior ERP Software Developer & Consultant</h3>
+                        <p class="timeline-company">Asl Al-Uroba</p>
+                    </div>
+                    <span class="timeline-date">Oct 2025 - Present</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Baghdad, Iraq (Remote)</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Building and customizing ERP solutions tailored to client needs using the Frappe framework</li>
+                        <li>Leading ERP implementations for enterprise clients</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Senior ERP Software Engineer & Consultant</h3>
+                        <p class="timeline-company">Tracking Systems (Part-time)</p>
+                    </div>
+                    <span class="timeline-date">May 2025 - Nov 2025</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia (Remote)</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Developed full tracking and operations management module on ERPNext</li>
+                        <li>Built device & sensor tracking, technician workflows, and customer onboarding</li>
+                        <li>Integrated WhatsApp APIs for instant notifications</li>
+                        <li>Created installation pipeline automation from device assignment to customer support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">ERPNext Software Developer & Consultant</h3>
+                        <p class="timeline-company">Lavaloon</p>
+                    </div>
+                    <span class="timeline-date">Jun 2025 - Sep 2025</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Developing and optimizing custom applications and modules on ERPNext</li>
+                        <li>Creating RESTful APIs and integrating third-party systems</li>
+                        <li>Contributed to KSA compliance app for e-invoicing</li>
+                        <li>Building front-end interfaces with JavaScript and Vue.js/React.js</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Backend Developer</h3>
+                        <p class="timeline-company">ERPCloud.Systems</p>
+                    </div>
+                    <span class="timeline-date">Sep 2022 - May 2025</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li><strong>Ministry of Interior Financial System:</strong> Led backend development from requirement analysis to production</li>
+                        <li><strong>Vehicle Maintenance System:</strong> Built comprehensive fleet management with legacy data migration from the 90s</li>
+                        <li><strong>Supply Chain System:</strong> Delivered robust supply chain management solution</li>
+                        <li><strong>Next App ERP Mobile Platform:</strong> Developed backend for full-fledged ERPNext mobile app</li>
+                        <li><strong>Performance Tuning:</strong> Specialized in query optimization and large data handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">ERP Software Developer</h3>
+                        <p class="timeline-company">TFM Technology Financial & Management Higher Institute</p>
+                    </div>
+                    <span class="timeline-date">Jan 2024 - Jan 2025</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt (Part-time)</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Developed ERP solutions for educational institution</li>
+                        <li>Worked on student information systems and academic management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3 class="timeline-title">Django Developer</h3>
+                        <p class="timeline-company">Bit68</p>
+                    </div>
+                    <span class="timeline-date">Jul 2022 - Aug 2022</span>
+                </div>
+                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                <div class="timeline-description">
+                    <ul>
+                        <li>Junior Django Developer working under senior guidance</li>
+                        <li>Applied best practices in building scalable Django applications</li>
+                        <li>Strengthened backend development skills and production-level standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Mansico Meta Integration</h3>
+                    <p class="project-tech">Python · ERPNext · Facebook API</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Open-source application enabling seamless synchronization of Facebook Ads leads with ERPNext. Automatically fetches new leads, creates them in ERPNext, and updates Meta Pixel with lead status changes.
+                    </p>
+                    <div class="project-stats">
+                        <span class="project-stat"><i class="fas fa-star"></i> 34</span>
+                        <span class="project-stat"><i class="fas fa-code-branch"></i> 20</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ahmed-Mansy-Mansico/mansico_meta_integration" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">KSA Compliance App</h3>
+                    <p class="project-tech">Python · ERPNext · E-Invoicing</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Leading KSA compliance application for ERPNext enabling Saudi e-invoicing. Contributed to this critical compliance tool used by businesses across Saudi Arabia.
+                    </p>
+                    <div class="project-stats">
+                        <span class="project-stat"><i class="fas fa-star"></i> 74</span>
+                        <span class="project-stat"><i class="fas fa-code-branch"></i> 83</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/lavaloon-eg/ksa_compliance" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Local Printers System</h3>
+                    <p class="project-tech">Python · Frappe · Windows Middleware</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Frappe/ERPNext application enabling categorized printing of POS invoices to multiple kitchen printers through a Windows middleware system with advanced routing features.
+                    </p>
+                    <div class="project-stats">
+                        <span class="project-stat"><i class="fas fa-star"></i> 7</span>
+                        <span class="project-stat"><i class="fas fa-code-branch"></i> 17</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Ahmed-Mansy-Mansico/local_printers" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Credit Hour University System</h3>
+                    <p class="project-tech">ERPNext · Python · Full SIS</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Complete Student Information System including student syncing, course enrollment, GPA calculations, schedules, financial installments, examination system with automated correction, and online LMS.
+                    </p>
+                    <div class="project-links">
+                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Successfully Deployed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">COVID-19 Test Automation</h3>
+                    <p class="project-tech">Python · Email Scraping · SMS API</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Automated system for medical laboratory that extracts COVID-19 test data from emails and sends results to patients via SMS in real-time. First project successfully deployed to production.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ahmed-Mansy-Mansico/Covid_test_app" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Ship Agency ERP Implementation</h3>
+                    <p class="project-tech">ERPNext · Full Business Solution</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        End-to-end ERP implementation for ship and port agency covering complex operational workflows, accounting, inventory management, and high-volume ship/port services.
+                    </p>
+                    <div class="project-links">
+                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Enterprise Deployment</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Ministry of Interior — Full ERP</h3>
+                    <p class="project-tech">ERPNext · Government · Data Migration</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Led backend development including requirements, use cases, system design, query optimization, and large-scale data migration from legacy government systems.
+                    </p>
+                    <div class="project-links">
+                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Government Deployment</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">NTRA ERP Consultation</h3>
+                    <p class="project-tech">ERPNext · Migration · Consulting</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Delivered a detailed technical evaluation for ERPNext migration covering challenges, pros/cons, and recommended best practices for the National Telecom Regulatory Authority.
+                    </p>
+                    <div class="project-links">
+                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Consultation Delivered</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Egypt E-Invoicing Integration</h3>
+                    <p class="project-tech">ERPNext · Compliance · Integration</p>
+                </div>
+                <div class="project-body">
+                    <p class="project-description">
+                        Integrated ERPNext with Egypt's E-Invoicing portal to ensure full legal compliance for businesses operating in Egypt.
+                    </p>
+                    <div class="project-links">
+                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Production Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <h2 class="section-title">Community Contributions</h2>
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="community-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>Open Source Contributions</h3>
+                <p>Active contributor to ERPNext ecosystem and open-source projects</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <div class="community-stat-number">39</div>
+                        <div class="community-stat-label">Followers</div>
+                    </div>
+                    <div class="community-stat">
+                        <div class="community-stat-number">1,540+</div>
+                        <div class="community-stat-label">Contributions</div>
+                    </div>
+                </div>
+                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fab fa-github"></i> Follow on GitHub
+                </a>
+            </div>
+
+            <div class="community-card">
+                <div class="community-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3>Mansico Academy</h3>
+                <p>Educational YouTube channel teaching ERPNext, Frappe, Python, and more</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <div class="community-stat-number">1.16K+</div>
+                        <div class="community-stat-label">Subscribers</div>
+                    </div>
+                    <div class="community-stat">
+                        <div class="community-stat-number">118+</div>
+                        <div class="community-stat-label">Videos</div>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/@mansyacademy" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fab fa-youtube"></i> Subscribe on YouTube
+                </a>
+            </div>
+
+            <div class="community-card">
+                <div class="community-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>Professional Network</h3>
+                <p>Connect with me on LinkedIn for professional opportunities</p>
+                <div class="community-stats">
+                    <div class="community-stat">
+                        <div class="community-stat-number">Active</div>
+                        <div class="community-stat-label">Profile</div>
+                    </div>
+                </div>
+                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3 class="education-degree">Bachelor's Degree in Software Engineering</h3>
+                    <p class="education-school">Modern Academy for Engineering and Technology - Computer Department</p>
+                </div>
+                <span class="education-year">Graduated 2023</span>
+            </div>
+            <div class="education-activities">
+                <h4>Activities & Societies:</h4>
+                <ul>
+                    <li>Joined multiple educational and technical clubs to strengthen technical foundation and communication skills</li>
+                    <li>Served as a tutor for two years, helping colleagues understand subjects such as C++, computer networks, and other core courses</li>
+                    <li>Developed leadership and mentoring skills through knowledge sharing and peer relationships</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="education" id="languages">
+        <h2 class="section-title">Languages</h2>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3 class="education-degree"><i class="fas fa-language"></i> Arabic</h3>
+                    <p class="education-school">Native / First Language</p>
+                </div>
+            </div>
+        </div>
+        <div class="education-card">
+            <div class="education-header">
+                <div>
+                    <h3 class="education-degree"><i class="fas fa-language"></i> English</h3>
+                    <p class="education-school">B2 — Upper Intermediate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:ahmedmansy265@gmail.com">ahmedmansy265@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone (Egypt)</h3>
+                <a href="tel:+201551465459">+20 155 146 5459</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone (Saudi Arabia)</h3>
+                <a href="tel:+966538767987">+966 53 876 7987</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location</h3>
+                <p>Mostafa El Nahass Street<br>Nasr City, Cairo, Egypt</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank">Ahmed-Mansy-Mansico</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank">ahmedmansymansico</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3>YouTube</h3>
+                <a href="https://www.youtube.com/@mansyacademy" target="_blank">@mansyacademy</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <h3>Facebook</h3>
+                <a href="https://www.facebook.com/AhmedMansyMansico" target="_blank">AhmedMansyMansico</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@mansyacademy" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/AhmedMansyMansico" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <p>&copy; 2026 Ahmed Mansy. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Built with <i class="fas fa-heart"></i> and lots of coffee</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item, .timeline-item, .project-card, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
