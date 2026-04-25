@@ -10,4 +10,4 @@ Personal portfolio of **Ahmed Mansy** — Senior ERPNext Developer & Consultant.
 - 📱 KSA: +966 53 876 7987
 - 💼 [LinkedIn](https://www.linkedin.com/in/ahmedmansymansico/)
 - 🐙 [GitHub](https://github.com/Ahmed-Mansy-Mansico)
-- ▶️ [YouTube — Mansy Academy](https://www.youtube.com/@mansyacademy)
+- ▶️ [YouTube — Mansy Academy](https://www.youtube.com/@mansicoacademy)
