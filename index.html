@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Mansy | Senior ERPNext Developer & Consultant</title>
+    <title>Ahmed Mansy | Senior ERPNext Developer & Consultant | Yanbu, Saudi Arabia</title>
+    <meta name="description" content="Ahmed Mansy is a Senior ERPNext Developer and Consultant based in Yanbu, Saudi Arabia. He leads ERPNext at FMH Marine Services, from ship-agency operations through finance, including Fasah Pay.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,14 +17,22 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f3f4f6;
+            --navy: #0b1f3a;
+            --blue-900: #0c2d6b;
+            --blue-800: #143a86;
+            --blue-700: #1d4ed8;
+            --blue-600: #2563eb;
+            --blue-500: #3b82f6;
+            --blue-100: #dbeafe;
+            --blue-50: #eff6ff;
+            --ink: #0f172a;
+            --muted: #475569;
+            --line: #dbe4f0;
+            --bg: #f3f7fc;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient: linear-gradient(135deg, #0b1f3a 0%, #143a86 52%, #1d4ed8 100%);
+            --gradient-bar: linear-gradient(90deg, #0c2d6b 0%, #2563eb 100%);
+            --shadow: 0 10px 30px rgba(12, 45, 107, 0.08);
         }
 
         html {
@@ -28,626 +40,588 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
+            font-family: "Source Sans 3", "Segoe UI", sans-serif;
+            line-height: 1.65;
+            color: var(--ink);
+            background: var(--white);
         }
 
-        /* Navigation */
+        h1, h2, h3, .logo, .btn {
+            font-family: Outfit, "Segoe UI", sans-serif;
+        }
+
+        a {
+            color: var(--blue-700);
+        }
+
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.12);
             z-index: 1000;
-            padding: 1rem 0;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0.9rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--blue-800);
+            letter-spacing: -0.02em;
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.4rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s;
+            color: var(--ink);
+            font-weight: 600;
+            font-size: 0.98rem;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--blue-700);
         }
 
         .mobile-menu {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             cursor: pointer;
+            color: var(--blue-800);
+            background: none;
+            border: 0;
         }
 
-        /* Hero Section */
         .hero {
-            margin-top: 70px;
-            padding: 5rem 2rem;
+            margin-top: 68px;
+            padding: 4.5rem 1.5rem 4rem;
             background: var(--gradient);
             color: var(--white);
-            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
         .hero::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
-            opacity: 0.3;
+            inset: 0;
+            background:
+                radial-gradient(circle at 12% 20%, rgba(96, 165, 250, 0.35), transparent 36%),
+                radial-gradient(circle at 88% 80%, rgba(191, 219, 254, 0.18), transparent 32%);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
+            text-align: center;
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 168px;
+            height: 168px;
             border-radius: 50%;
-            border: 5px solid var(--white);
-            margin-bottom: 2rem;
+            border: 4px solid rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.4rem;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            font-size: 3.1rem;
+            line-height: 1.1;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.03em;
         }
 
         .hero .tagline {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s backwards;
+            font-size: 1.35rem;
+            margin-bottom: 0.55rem;
+            color: #dbeafe;
         }
 
         .hero .location {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.4s backwards;
+            font-size: 1.05rem;
+            margin-bottom: 1.6rem;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.6s backwards;
         }
 
         .btn {
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
+            padding: 0.75rem 1.35rem;
+            border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
         }
 
         .btn-primary {
             background: var(--white);
-            color: var(--primary-color);
+            color: var(--blue-800);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .btn-primary:hover,
+        .btn-secondary:hover,
+        .btn-solid:hover {
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--white);
-            border: 2px solid var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.75);
         }
 
         .btn-secondary:hover {
             background: var(--white);
-            color: var(--primary-color);
+            color: var(--blue-800);
         }
 
-        /* Stats Section */
+        .btn-solid {
+            background: var(--blue-700);
+            color: var(--white);
+        }
+
+        .btn-solid:hover {
+            background: var(--blue-800);
+        }
+
         .stats {
-            padding: 3rem 2rem;
-            background: var(--bg-light);
+            background: var(--bg);
+            padding: 2.2rem 1.5rem;
+        }
+
+        .stats-container,
+        .wrap {
+            max-width: 1120px;
+            margin: 0 auto;
         }
 
         .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
         }
 
         .stat-item {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.35rem 1rem;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-family: Outfit, sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--blue-700);
             display: block;
         }
 
         .stat-label {
-            color: var(--text-light);
-            margin-top: 0.5rem;
+            color: var(--muted);
+            margin-top: 0.2rem;
         }
 
-        /* Section Styles */
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 4.5rem 1.5rem;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.15rem;
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            margin-bottom: 2.4rem;
+            letter-spacing: -0.03em;
+            color: var(--navy);
         }
 
         .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            content: "";
+            display: block;
+            width: 72px;
             height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--white);
+            margin: 0.7rem auto 0;
+            border-radius: 999px;
+            background: var(--gradient-bar);
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .about-text p {
             margin-bottom: 1rem;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-
-        .about-image {
-            text-align: center;
+            color: var(--muted);
+            font-size: 1.05rem;
         }
 
         .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--line);
         }
 
-        /* Skills Section */
-        .skills {
-            background: var(--bg-light);
+        .skills,
+        .projects,
+        .contact {
+            background: var(--bg);
+        }
+
+        .skills-grid,
+        .projects-grid,
+        .community-grid,
+        .contact-content {
+            display: grid;
+            gap: 1.15rem;
         }
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .skill-category,
+        .timeline-item,
+        .project-card,
+        .community-card,
+        .education-card,
+        .contact-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
         }
 
         .skill-category {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.4rem 1.35rem 1.2rem;
         }
 
         .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
+            color: var(--blue-800);
+            margin-bottom: 0.85rem;
+            font-size: 1.08rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .skill-list {
+        .skill-list,
+        .timeline-description ul,
+        .education-activities ul {
             list-style: none;
         }
 
-        .skill-list li {
-            padding: 0.5rem 0;
-            color: var(--text-light);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-list li::before {
-            content: '▹';
-            color: var(--primary-color);
-        }
-
-        /* Experience Section */
-        .timeline {
+        .skill-list li,
+        .timeline-description li {
+            color: var(--muted);
+            padding: 0.28rem 0 0.28rem 1rem;
             position: relative;
+        }
+
+        .skill-list li::before,
+        .timeline-description li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--blue-500);
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
         }
 
         .timeline-item {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--primary-color);
-            position: relative;
+            padding: 1.5rem 1.5rem 1.35rem 1.6rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--blue-600);
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 2rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--primary-color);
+        .timeline-item.current {
+            background: linear-gradient(180deg, #f8fbff 0%, #ffffff 40%);
+            border-left-color: var(--blue-800);
         }
 
-        .timeline-header {
+        .timeline-header,
+        .education-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
             gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 0.35rem;
         }
 
-        .timeline-title {
-            font-size: 1.3rem;
-            color: var(--text-dark);
+        .timeline-title,
+        .education-degree {
+            font-size: 1.18rem;
+            color: var(--navy);
         }
 
-        .timeline-company {
-            color: var(--primary-color);
-            font-weight: 600;
+        .timeline-company,
+        .education-school {
+            color: var(--blue-700);
+            font-weight: 700;
         }
 
-        .timeline-date {
-            color: var(--text-light);
-            font-size: 0.9rem;
+        .timeline-company a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .timeline-company a:hover {
+            text-decoration: underline;
+        }
+
+        .timeline-date,
+        .education-year,
+        .timeline-location {
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
         .timeline-location {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.7rem;
         }
 
-        .timeline-description ul {
-            list-style: none;
-            color: var(--text-light);
-        }
-
-        .timeline-description li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .timeline-description li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-        }
-
-        /* Projects Section */
-        .projects {
-            background: var(--bg-light);
+        .badge {
+            display: inline-block;
+            margin-left: 0.35rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 999px;
+            background: var(--blue-50);
+            color: var(--blue-800);
+            font-size: 0.78rem;
+            font-weight: 700;
+            vertical-align: middle;
         }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.2s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .project-card:hover,
+        .contact-card:hover {
+            transform: translateY(-3px);
         }
 
         .project-header {
             background: var(--gradient);
             color: var(--white);
-            padding: 1.5rem;
+            padding: 1.2rem 1.3rem;
         }
 
         .project-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
         }
 
         .project-tech {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            color: #dbeafe;
+            font-size: 0.92rem;
         }
 
         .project-body {
-            padding: 1.5rem;
+            padding: 1.2rem 1.3rem 1.3rem;
+        }
+
+        .project-description,
+        .community-card p,
+        .education-activities {
+            color: var(--muted);
         }
 
         .project-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .project-links a {
+            color: var(--blue-700);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
         }
 
         .project-stats {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--muted);
+            font-size: 0.92rem;
         }
 
-        .project-stat {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
+        .status {
+            color: var(--blue-800);
+            font-weight: 700;
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
+        .community-grid,
+        .contact-content {
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        .project-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-weight: 600;
-        }
-
-        .project-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Community Section */
-        .community-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .community-card,
+        .contact-card,
+        .education-card {
+            padding: 1.5rem;
         }
 
         .community-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
         }
 
-        .community-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        .community-icon,
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--blue-700);
+            margin-bottom: 0.7rem;
         }
 
-        .community-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .community-card p {
-            color: var(--text-light);
-            margin-bottom: 1rem;
+        .community-card h3,
+        .contact-card h3 {
+            color: var(--navy);
+            margin-bottom: 0.4rem;
         }
 
         .community-stats {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
-
-        .community-stat {
-            text-align: center;
+            gap: 1.6rem;
+            margin: 1rem 0 1.1rem;
         }
 
         .community-stat-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-family: Outfit, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--blue-700);
         }
 
         .community-stat-label {
+            color: var(--muted);
             font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* Education Section */
-        .education-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .education-degree {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-        }
-
-        .education-school {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .education-year {
-            color: var(--text-light);
         }
 
         .education-activities {
-            color: var(--text-light);
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
-        /* Contact Section */
-        .contact {
-            background: var(--bg-light);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .education-activities li {
+            margin-left: 1.1rem;
+            list-style: disc;
         }
 
         .contact-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .contact-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-
-        .contact-card a {
-            color: var(--text-light);
+        .contact-card a,
+        .contact-card p {
+            color: var(--muted);
             text-decoration: none;
-            word-break: break-all;
         }
 
         .contact-card a:hover {
-            color: var(--primary-color);
+            color: var(--blue-700);
         }
 
-        /* Footer */
         footer {
-            background: var(--text-dark);
-            color: var(--white);
+            background: var(--navy);
+            color: #dbeafe;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
+            gap: 1.1rem;
+            margin-bottom: 0.8rem;
         }
 
         .social-links a {
             color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s, transform 0.3s;
+            font-size: 1.3rem;
+            text-decoration: none;
         }
 
         .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
+            color: #93c5fd;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        @media (max-width: 900px) {
+            .stats-container,
+            .skills-grid,
+            .projects-grid,
+            .community-grid,
+            .contact-content,
+            .about-content {
+                grid-template-columns: 1fr;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
-        /* Responsive */
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 0.8rem 1.4rem 1rem;
+                border-bottom: 1px solid var(--line);
+                gap: 0.7rem;
+            }
+
+            .nav-links.open {
+                display: flex;
             }
 
             .mobile-menu {
@@ -655,22 +629,11 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline-header {
+            .timeline-header,
+            .education-header {
                 flex-direction: column;
             }
         }
@@ -678,12 +641,10 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Ahmed Mansy</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+            <a class="logo" href="#home">Ahmed Mansy</a>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -691,43 +652,42 @@
                 <li><a href="#community">Community</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-menu">
+            <button class="mobile-menu" id="menu-toggle" aria-label="Open menu" aria-expanded="false">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <header class="hero" id="home">
         <div class="hero-content">
             <img src="profile.jpeg" alt="Ahmed Mansy" class="profile-img">
+            <p class="eyebrow">Yanbu, Saudi Arabia · On-site</p>
             <h1>Ahmed Mansy</h1>
             <p class="tagline">Senior ERPNext Developer & Consultant</p>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt | Born: April 11, 2000</p>
+            <p class="location">FMH Marine Services · Ship agency ERP · Fasah Pay · Finance workflows</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> Get In Touch
+                    <i class="fas fa-envelope"></i> Contact in Saudi Arabia
                 </a>
-                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" class="btn btn-secondary">
+                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" rel="noopener" class="btn btn-secondary">
                     <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Stats Section -->
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item">
                 <span class="stat-number">4+</span>
-                <p class="stat-label">Years Experience</p>
+                <p class="stat-label">Years with ERPNext</p>
             </div>
             <div class="stat-item">
-                <span class="stat-number">1,540+</span>
-                <p class="stat-label">GitHub Contributions</p>
+                <span class="stat-number">Yanbu</span>
+                <p class="stat-label">Based in Saudi Arabia</p>
             </div>
             <div class="stat-item">
                 <span class="stat-number">118+</span>
@@ -740,597 +700,522 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Senior ERP and Backend Developer with extensive experience delivering high-performance ERPNext and Django-based systems for government, enterprise, and education sectors. I specialize in system architecture, backend engineering, data migration, performance optimization, and building complex end-to-end ERP modules.
-                </p>
-                <p>
-                    I have led mission-critical systems, engineered full student information systems, built mobile API backends, designed advanced tracking and operations platforms, and optimized large-scale deployments with millions of records.
-                </p>
-                <p>
-                    I'm passionate about clean architecture, scalability, DevOps, and solving real business problems through powerful, reliable ERP solutions. I believe in sharing knowledge and contributing to the open-source community.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="cartoon_profile_pic.png" alt="About Ahmed Mansy">
+        <div class="wrap">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Senior ERPNext Developer and Consultant based in Yanbu, Saudi Arabia. I lead the full-time, on-site ERPNext program at FMH Marine Services, a Saudi ship and port agency. I designed and built the system from scratch, from the first requirement through ship-agency operations and finance, including the Fasah Pay integration and consulting on finance processes and workflow design.
+                    </p>
+                    <p>
+                        Before FMH I worked as a Senior ERP Consultant at Asl Al-Uroba, and across earlier roles I delivered ERPNext and Django systems for government, enterprise, logistics, and education. That work covers system architecture, backend engineering, data migration, performance on large datasets, and complex domain modules.
+                    </p>
+                    <p>
+                        I care about clean architecture, reliable operations, and ERP systems that follow how the business actually runs.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="cartoon_profile_pic.png" alt="Illustration of Ahmed Mansy">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="skills" id="skills">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Programming Languages</h3>
-                <ul class="skill-list">
-                    <li>Python (Expert)</li>
-                    <li>JavaScript (Advanced)</li>
-                    <li>SQL (Expert)</li>
-                    <li>HTML/CSS (Advanced)</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> ERP & Frameworks</h3>
-                <ul class="skill-list">
-                    <li>ERPNext (Expert)</li>
-                    <li>Frappe Framework (Expert)</li>
-                    <li>Django (Advanced)</li>
-                    <li>Django Cookiecutter</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Databases</h3>
-                <ul class="skill-list">
-                    <li>MariaDB</li>
-                    <li>PostgreSQL</li>
-                    <li>MySQL</li>
-                    <li>Redis</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-cloud"></i> DevOps & Cloud</h3>
-                <ul class="skill-list">
-                    <li>Docker</li>
-                    <li>Kubernetes</li>
-                    <li>Nginx</li>
-                    <li>AWS, Heroku, DigitalOcean</li>
-                    <li>Load Balancing</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-plug"></i> Frontend Technologies</h3>
-                <ul class="skill-list">
-                    <li>React.js</li>
-                    <li>Vue.js</li>
-                    <li>WebSockets / Socket.IO</li>
-                    <li>RESTful APIs</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-tools"></i> Tools & Practices</h3>
-                <ul class="skill-list">
-                    <li>Git, GitHub, GitLab</li>
-                    <li>Query Optimization</li>
-                    <li>Database Indexing</li>
-                    <li>SOLID Principles</li>
-                    <li>Design Patterns</li>
-                </ul>
+        <div class="wrap">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-ship"></i> Saudi Arabia Domain</h3>
+                    <ul class="skill-list">
+                        <li>Ship agency and port operations</li>
+                        <li>Fasah Pay integration</li>
+                        <li>KSA e-invoicing compliance</li>
+                        <li>Finance and workflow design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> ERP & Frameworks</h3>
+                    <ul class="skill-list">
+                        <li>ERPNext</li>
+                        <li>Frappe Framework</li>
+                        <li>Django</li>
+                        <li>Django Cookiecutter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                        <li>HTML and CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Databases</h3>
+                    <ul class="skill-list">
+                        <li>MariaDB</li>
+                        <li>PostgreSQL</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-plug"></i> APIs & Frontend</h3>
+                    <ul class="skill-list">
+                        <li>RESTful APIs</li>
+                        <li>WebSockets and Socket.IO</li>
+                        <li>React.js</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Delivery</h3>
+                    <ul class="skill-list">
+                        <li>Docker, Kubernetes, Nginx</li>
+                        <li>AWS, DigitalOcean</li>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>Query tuning, indexing, SOLID</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section class="experience" id="experience">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">Senior ERP Software Developer & Consultant</h3>
-                        <p class="timeline-company">Asl Al-Uroba</p>
+        <div class="wrap">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <article class="timeline-item current">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Senior ERPNext Developer & Consultant <span class="badge">Current</span></h3>
+                            <p class="timeline-company">
+                                <a href="https://www.faisal-higgi.com/" target="_blank" rel="noopener">FMH Marine Services</a>
+                                (Faisal M. Higgi & Associates Co. Ltd.)
+                            </p>
+                        </div>
+                        <span class="timeline-date">Jan 2026 – Present · Full-time</span>
                     </div>
-                    <span class="timeline-date">Oct 2025 - Present</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Baghdad, Iraq (Remote)</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li>Building and customizing ERP solutions tailored to client needs using the Frappe framework</li>
-                        <li>Leading ERP implementations for enterprise clients</li>
-                    </ul>
-                </div>
-            </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Yanbu, Saudi Arabia · On-site</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Leading ERPNext for a Saudi ship and port agency, built from scratch and run on site.</li>
+                            <li>Owned discovery, development, and rollout from vessel and port operations through finance.</li>
+                            <li>Built the modules that carry a port call from arrival and agency services through billing and accounting.</li>
+                            <li>Integrated Fasah Pay so port-service payments sit inside ERPNext with agency operations.</li>
+                            <li>Consulted with finance on posting flow and workflow changes between operations and accounts.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">Senior ERP Software Engineer & Consultant</h3>
-                        <p class="timeline-company">Tracking Systems (Part-time)</p>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Senior ERP Consultant</h3>
+                            <p class="timeline-company"><a href="https://aau.iq/" target="_blank" rel="noopener">Asl Al-Uroba</a></p>
+                        </div>
+                        <span class="timeline-date">Sep 2025 – Dec 2025</span>
                     </div>
-                    <span class="timeline-date">May 2025 - Nov 2025</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia (Remote)</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li>Developed full tracking and operations management module on ERPNext</li>
-                        <li>Built device & sensor tracking, technician workflows, and customer onboarding</li>
-                        <li>Integrated WhatsApp APIs for instant notifications</li>
-                        <li>Created installation pipeline automation from device assignment to customer support</li>
-                    </ul>
-                </div>
-            </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Baghdad, Iraq · Remote</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Built and customized ERPNext on the Frappe framework for client implementations.</li>
+                            <li>Worked through requirements, configuration, custom modules, and day-to-day operating design.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">ERPNext Software Developer & Consultant</h3>
-                        <p class="timeline-company">Lavaloon</p>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Senior ERPNext Software Engineer & Consultant</h3>
+                            <p class="timeline-company">Tracking Systems <span class="badge">Part-time</span></p>
+                        </div>
+                        <span class="timeline-date">May 2025 – Nov 2025</span>
                     </div>
-                    <span class="timeline-date">Jun 2025 - Sep 2025</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li>Developing and optimizing custom applications and modules on ERPNext</li>
-                        <li>Creating RESTful APIs and integrating third-party systems</li>
-                        <li>Contributed to KSA compliance app for e-invoicing</li>
-                        <li>Building front-end interfaces with JavaScript and Vue.js/React.js</li>
-                    </ul>
-                </div>
-            </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia · Remote</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Developed an ERPNext module for device installations, sensor tracking, and customer onboarding.</li>
+                            <li>Built technician scheduling, dispatch, location tracking, and installation status.</li>
+                            <li>Integrated WhatsApp notifications for customers and technicians.</li>
+                            <li>Connected installation completion to middleware provisioning by API, then support and training.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">Backend Developer</h3>
-                        <p class="timeline-company">ERPCloud.Systems</p>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">ERPNext Software Developer & Consultant</h3>
+                            <p class="timeline-company">Lavaloon</p>
+                        </div>
+                        <span class="timeline-date">Jun 2025 – Sep 2025 · Full-time</span>
                     </div>
-                    <span class="timeline-date">Sep 2022 - May 2025</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li><strong>Ministry of Interior Financial System:</strong> Led backend development from requirement analysis to production</li>
-                        <li><strong>Vehicle Maintenance System:</strong> Built comprehensive fleet management with legacy data migration from the 90s</li>
-                        <li><strong>Supply Chain System:</strong> Delivered robust supply chain management solution</li>
-                        <li><strong>Next App ERP Mobile Platform:</strong> Developed backend for full-fledged ERPNext mobile app</li>
-                        <li><strong>Performance Tuning:</strong> Specialized in query optimization and large data handling</li>
-                    </ul>
-                </div>
-            </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Built custom ERPNext apps, REST APIs, workflows, and third-party integrations.</li>
+                            <li>Contributed to the KSA compliance app used for Saudi e-invoicing.</li>
+                            <li>Delivered Python backends and JavaScript, Vue.js, and React.js interfaces.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">ERP Software Developer</h3>
-                        <p class="timeline-company">TFM Technology Financial & Management Higher Institute</p>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Backend Developer</h3>
+                            <p class="timeline-company">ERPCloud.Systems</p>
+                        </div>
+                        <span class="timeline-date">Sep 2022 – May 2025 · Full-time</span>
                     </div>
-                    <span class="timeline-date">Jan 2024 - Jan 2025</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt (Part-time)</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li>Developed ERP solutions for educational institution</li>
-                        <li>Worked on student information systems and academic management</li>
-                    </ul>
-                </div>
-            </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Ministry of Interior financial system: backend from requirements through production and later tuning.</li>
+                            <li>Vehicle maintenance: fleet management and migration of 1990s data into ERPNext.</li>
+                            <li>Supply chain workflows, an ERPNext mobile API, and query and index work for high volume.</li>
+                        </ul>
+                    </div>
+                </article>
 
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <div>
-                        <h3 class="timeline-title">Django Developer</h3>
-                        <p class="timeline-company">Bit68</p>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">ERP Software Developer</h3>
+                            <p class="timeline-company">TFM Technology Financial & Management Higher Institute <span class="badge">Part-time</span></p>
+                        </div>
+                        <span class="timeline-date">Jan 2024 – Jan 2025</span>
                     </div>
-                    <span class="timeline-date">Jul 2022 - Aug 2022</span>
-                </div>
-                <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
-                <div class="timeline-description">
-                    <ul>
-                        <li>Junior Django Developer working under senior guidance</li>
-                        <li>Applied best practices in building scalable Django applications</li>
-                        <li>Strengthened backend development skills and production-level standards</li>
-                    </ul>
-                </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Built the credit-hour student information system: ministry sync, enrollment, GPA, timetables, installments, LMS, and examinations.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Django Developer</h3>
+                            <p class="timeline-company">Bit68</p>
+                        </div>
+                        <span class="timeline-date">Jul 2022 – Aug 2022 · Full-time</span>
+                    </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Junior Django developer on production applications, working with senior review and team practices.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Junior Django Developer</h3>
+                            <p class="timeline-company">ASL Pathology <span class="badge">Freelance</span></p>
+                        </div>
+                        <span class="timeline-date">Jan 2022 – Jun 2022</span>
+                    </div>
+                    <p class="timeline-location"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</p>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Automated COVID-19 result delivery: email intake, validation, and SMS to patients. First system I took live.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects" id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Mansico Meta Integration</h3>
-                    <p class="project-tech">Python · ERPNext · Facebook API</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Open-source application enabling seamless synchronization of Facebook Ads leads with ERPNext. Automatically fetches new leads, creates them in ERPNext, and updates Meta Pixel with lead status changes.
-                    </p>
-                    <div class="project-stats">
-                        <span class="project-stat"><i class="fas fa-star"></i> 34</span>
-                        <span class="project-stat"><i class="fas fa-code-branch"></i> 20</span>
+        <div class="wrap">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">FMH Marine — Ship Agency ERP</h3>
+                        <p class="project-tech">ERPNext · Operations · Finance · Fasah Pay</p>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Ahmed-Mansy-Mansico/mansico_meta_integration" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Greenfield ERPNext for FMH Marine Services in Yanbu. Ship-agency operations through finance, Fasah Pay for port-service payments, and finance workflow design so billing and settlement follow the port call.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://www.faisal-higgi.com/" target="_blank" rel="noopener">FMH Marine Services</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">KSA Compliance App</h3>
-                    <p class="project-tech">Python · ERPNext · E-Invoicing</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Leading KSA compliance application for ERPNext enabling Saudi e-invoicing. Contributed to this critical compliance tool used by businesses across Saudi Arabia.
-                    </p>
-                    <div class="project-stats">
-                        <span class="project-stat"><i class="fas fa-star"></i> 74</span>
-                        <span class="project-stat"><i class="fas fa-code-branch"></i> 83</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">KSA Compliance</h3>
+                        <p class="project-tech">Python · ERPNext · Saudi e-invoicing</p>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/lavaloon-eg/ksa_compliance" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Contributor to the Lavaloon KSA compliance app, used by ERPNext sites in Saudi Arabia for e-invoicing compliance.
+                        </p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 74</span>
+                            <span><i class="fas fa-code-branch"></i> 83</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lavaloon-eg/ksa_compliance" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Local Printers System</h3>
-                    <p class="project-tech">Python · Frappe · Windows Middleware</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Frappe/ERPNext application enabling categorized printing of POS invoices to multiple kitchen printers through a Windows middleware system with advanced routing features.
-                    </p>
-                    <div class="project-stats">
-                        <span class="project-stat"><i class="fas fa-star"></i> 7</span>
-                        <span class="project-stat"><i class="fas fa-code-branch"></i> 17</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Tracking Systems — Riyadh</h3>
+                        <p class="project-tech">ERPNext · Field operations · WhatsApp</p>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Ahmed-Mansy-Mansico/local_printers" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Device, sensor, and technician operations module: scheduling, location, installation status, WhatsApp alerts, and API handoff to device provisioning.
+                        </p>
+                        <p class="status"><i class="fas fa-check-circle"></i> Delivered for a Riyadh team</p>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Credit Hour University System</h3>
-                    <p class="project-tech">ERPNext · Python · Full SIS</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Complete Student Information System including student syncing, course enrollment, GPA calculations, schedules, financial installments, examination system with automated correction, and online LMS.
-                    </p>
-                    <div class="project-links">
-                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Successfully Deployed</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Ministry of Interior ERP</h3>
+                        <p class="project-tech">ERPNext · Government · Data migration</p>
                     </div>
-                </div>
-            </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Backend lead for a government finance system: requirements, design, query optimization, and migration from legacy systems.
+                        </p>
+                        <p class="status"><i class="fas fa-check-circle"></i> Production system</p>
+                    </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">COVID-19 Test Automation</h3>
-                    <p class="project-tech">Python · Email Scraping · SMS API</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Automated system for medical laboratory that extracts COVID-19 test data from emails and sends results to patients via SMS in real-time. First project successfully deployed to production.
-                    </p>
-                    <div class="project-links">
-                        <a href="https://github.com/Ahmed-Mansy-Mansico/Covid_test_app" target="_blank">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Credit Hour University System</h3>
+                        <p class="project-tech">ERPNext · Student information system</p>
                     </div>
-                </div>
-            </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Full SIS: ministry student sync, enrollment, GPA, timetables, installments, student cards, LMS materials, and examinations with barcoded papers and automated correction.
+                        </p>
+                        <p class="status"><i class="fas fa-check-circle"></i> Deployed</p>
+                    </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Ship Agency ERP Implementation</h3>
-                    <p class="project-tech">ERPNext · Full Business Solution</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        End-to-end ERP implementation for ship and port agency covering complex operational workflows, accounting, inventory management, and high-volume ship/port services.
-                    </p>
-                    <div class="project-links">
-                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Enterprise Deployment</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Mansico Meta Integration</h3>
+                        <p class="project-tech">Python · ERPNext · Facebook Lead Ads</p>
                     </div>
-                </div>
-            </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Open-source app that syncs Facebook leads into ERPNext and sends lead status back to Meta.
+                        </p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 18+</span>
+                            <span><i class="fas fa-code-branch"></i> Public app</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmed-Mansy-Mansico/mansico_meta_integration" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Ministry of Interior — Full ERP</h3>
-                    <p class="project-tech">ERPNext · Government · Data Migration</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Led backend development including requirements, use cases, system design, query optimization, and large-scale data migration from legacy government systems.
-                    </p>
-                    <div class="project-links">
-                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Government Deployment</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Local Printers</h3>
+                        <p class="project-tech">Python · Frappe · Windows middleware</p>
                     </div>
-                </div>
-            </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            POS receipt routing to multiple printers through a Windows Flask middleware using Socket.IO.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmed-Mansy-Mansico/local_printers" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">NTRA ERP Consultation</h3>
-                    <p class="project-tech">ERPNext · Migration · Consulting</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Delivered a detailed technical evaluation for ERPNext migration covering challenges, pros/cons, and recommended best practices for the National Telecom Regulatory Authority.
-                    </p>
-                    <div class="project-links">
-                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Consultation Delivered</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">NTRA ERP Consultation</h3>
+                        <p class="project-tech">ERPNext · Migration review</p>
                     </div>
-                </div>
-            </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Technical evaluation for an ERPNext migration: challenges, tradeoffs, and a recommended approach.
+                        </p>
+                        <p class="status"><i class="fas fa-check-circle"></i> Consultation delivered</p>
+                    </div>
+                </article>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Egypt E-Invoicing Integration</h3>
-                    <p class="project-tech">ERPNext · Compliance · Integration</p>
-                </div>
-                <div class="project-body">
-                    <p class="project-description">
-                        Integrated ERPNext with Egypt's E-Invoicing portal to ensure full legal compliance for businesses operating in Egypt.
-                    </p>
-                    <div class="project-links">
-                        <span style="color: var(--text-light);"><i class="fas fa-check-circle"></i> Production Ready</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Egypt E-Invoicing</h3>
+                        <p class="project-tech">ERPNext · Compliance integration</p>
                     </div>
-                </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Integrated ERPNext with the Egypt e-invoicing portal so invoices meet the legal submission flow.
+                        </p>
+                        <p class="status"><i class="fas fa-check-circle"></i> In production use</p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">COVID-19 Result Automation</h3>
+                        <p class="project-tech">Python · Email · SMS</p>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">
+                            Read lab results from email, validated them, and sent SMS to patients. First system I took live.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ahmed-Mansy-Mansico/Covid_test_app" target="_blank" rel="noopener"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Community Section -->
     <section class="community" id="community">
-        <h2 class="section-title">Community Contributions</h2>
-        <div class="community-grid">
-            <div class="community-card">
-                <div class="community-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>Open Source Contributions</h3>
-                <p>Active contributor to ERPNext ecosystem and open-source projects</p>
-                <div class="community-stats">
-                    <div class="community-stat">
-                        <div class="community-stat-number">39</div>
-                        <div class="community-stat-label">Followers</div>
+        <div class="wrap">
+            <h2 class="section-title">Community</h2>
+            <div class="community-grid">
+                <article class="community-card">
+                    <div class="community-icon"><i class="fab fa-github"></i></div>
+                    <h3>Open Source</h3>
+                    <p>ERPNext apps and contributions, including Saudi e-invoicing compliance.</p>
+                    <div class="community-stats">
+                        <div>
+                            <div class="community-stat-number">1,540+</div>
+                            <div class="community-stat-label">Contributions</div>
+                        </div>
                     </div>
-                    <div class="community-stat">
-                        <div class="community-stat-number">1,540+</div>
-                        <div class="community-stat-label">Contributions</div>
+                    <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" rel="noopener" class="btn btn-solid">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </article>
+                <article class="community-card">
+                    <div class="community-icon"><i class="fab fa-youtube"></i></div>
+                    <h3>Mansico Academy</h3>
+                    <p>Videos on ERPNext, Frappe, Python, SQL, and networking.</p>
+                    <div class="community-stats">
+                        <div>
+                            <div class="community-stat-number">1.16K+</div>
+                            <div class="community-stat-label">Subscribers</div>
+                        </div>
+                        <div>
+                            <div class="community-stat-number">118+</div>
+                            <div class="community-stat-label">Videos</div>
+                        </div>
                     </div>
-                </div>
-                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
-                    <i class="fab fa-github"></i> Follow on GitHub
-                </a>
-            </div>
-
-            <div class="community-card">
-                <div class="community-icon">
-                    <i class="fab fa-youtube"></i>
-                </div>
-                <h3>Mansico Academy</h3>
-                <p>Educational YouTube channel teaching ERPNext, Frappe, Python, and more</p>
-                <div class="community-stats">
-                    <div class="community-stat">
-                        <div class="community-stat-number">1.16K+</div>
-                        <div class="community-stat-label">Subscribers</div>
+                    <a href="https://www.youtube.com/@mansicoacademy" target="_blank" rel="noopener" class="btn btn-solid">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </article>
+                <article class="community-card">
+                    <div class="community-icon"><i class="fab fa-linkedin"></i></div>
+                    <h3>LinkedIn</h3>
+                    <p>Saudi-based ERPNext consulting, implementation, and product work.</p>
+                    <div class="community-stats">
+                        <div>
+                            <div class="community-stat-number">Yanbu</div>
+                            <div class="community-stat-label">Saudi Arabia</div>
+                        </div>
                     </div>
-                    <div class="community-stat">
-                        <div class="community-stat-number">118+</div>
-                        <div class="community-stat-label">Videos</div>
-                    </div>
-                </div>
-                <a href="https://www.youtube.com/@mansicoacademy" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
-                    <i class="fab fa-youtube"></i> Subscribe on YouTube
-                </a>
-            </div>
-
-            <div class="community-card">
-                <div class="community-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3>Professional Network</h3>
-                <p>Connect with me on LinkedIn for professional opportunities</p>
-                <div class="community-stats">
-                    <div class="community-stat">
-                        <div class="community-stat-number">Active</div>
-                        <div class="community-stat-label">Profile</div>
-                    </div>
-                </div>
-                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" class="btn btn-primary" style="margin-top: 1rem;">
-                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
-                </a>
+                    <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" rel="noopener" class="btn btn-solid">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section class="education" id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="education-card">
-            <div class="education-header">
-                <div>
-                    <h3 class="education-degree">Bachelor's Degree in Software Engineering</h3>
-                    <p class="education-school">Modern Academy for Engineering and Technology - Computer Department</p>
+        <div class="wrap">
+            <h2 class="section-title">Education & Languages</h2>
+            <article class="education-card">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">Bachelor's Degree in Software Engineering</h3>
+                        <p class="education-school">Modern Academy for Engineering and Technology, Computer Department</p>
+                    </div>
+                    <span class="education-year">2023</span>
                 </div>
-                <span class="education-year">Graduated 2023</span>
-            </div>
-            <div class="education-activities">
-                <h4>Activities & Societies:</h4>
-                <ul>
-                    <li>Joined multiple educational and technical clubs to strengthen technical foundation and communication skills</li>
-                    <li>Served as a tutor for two years, helping colleagues understand subjects such as C++, computer networks, and other core courses</li>
-                    <li>Developed leadership and mentoring skills through knowledge sharing and peer relationships</li>
-                </ul>
-            </div>
+                <div class="education-activities">
+                    <p>Tutor for two years in C++, computer networks, and other core courses.</p>
+                </div>
+            </article>
+            <article class="education-card" style="margin-top: 1rem;">
+                <div class="education-header">
+                    <div>
+                        <h3 class="education-degree">Languages</h3>
+                        <p class="education-school">Arabic — first language · English — B2, Upper Intermediate</p>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Languages Section -->
-    <section class="education" id="languages">
-        <h2 class="section-title">Languages</h2>
-        <div class="education-card">
-            <div class="education-header">
-                <div>
-                    <h3 class="education-degree"><i class="fas fa-language"></i> Arabic</h3>
-                    <p class="education-school">Native / First Language</p>
-                </div>
-            </div>
-        </div>
-        <div class="education-card">
-            <div class="education-header">
-                <div>
-                    <h3 class="education-degree"><i class="fas fa-language"></i> English</h3>
-                    <p class="education-school">B2 — Upper Intermediate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <a href="mailto:ahmedmansy265@gmail.com">ahmedmansy265@gmail.com</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <h3>Phone (Egypt)</h3>
-                <a href="tel:+201551465459">+20 155 146 5459</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <h3>Phone (Saudi Arabia)</h3>
-                <a href="tel:+966538767987">+966 53 876 7987</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>Location</h3>
-                <p>Mostafa El Nahass Street<br>Nasr City, Cairo, Egypt</p>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank">Ahmed-Mansy-Mansico</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank">ahmedmansymansico</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-youtube"></i>
-                </div>
-                <h3>YouTube</h3>
-                <a href="https://www.youtube.com/@mansicoacademy" target="_blank">@mansicoacademy</a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-facebook"></i>
-                </div>
-                <h3>Facebook</h3>
-                <a href="https://www.facebook.com/AhmedMansyMansico" target="_blank">AhmedMansyMansico</a>
+        <div class="wrap">
+            <h2 class="section-title">Contact in Saudi Arabia</h2>
+            <div class="contact-content">
+                <article class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <h3>Mobile</h3>
+                    <a href="tel:+966538767987">+966 53 876 7987</a>
+                </article>
+                <article class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <a href="mailto:ahmedmansy265@gmail.com">ahmedmansy265@gmail.com</a>
+                </article>
+                <article class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Al Muruj District<br>Yanbu, Saudi Arabia</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.youtube.com/@mansicoacademy" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.facebook.com/AhmedMansyMansico" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/ahmedmansymansico/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Ahmed-Mansy-Mansico" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com/@mansicoacademy" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
-        <p>&copy; 2026 Ahmed Mansy. All rights reserved.</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">Built with <i class="fas fa-heart"></i> and lots of coffee</p>
+        <p>Ahmed Mansy · Senior ERPNext Developer & Consultant · Yanbu, Saudi Arabia</p>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        const menuToggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            const open = navLinks.classList.toggle("open");
+            menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
         });
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Animate stats on scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-                }
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.stat-item, .timeline-item, .project-card, .skill-category').forEach(el => {
-            observer.observe(el);
         });
     </script>
 </body>
